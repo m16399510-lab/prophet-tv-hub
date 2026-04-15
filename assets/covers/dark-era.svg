@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#21152d"/>
+      <stop offset="52%" stop-color="#13192f"/>
+      <stop offset="100%" stop-color="#070b14"/>
+    </linearGradient>
+    <radialGradient id="moon" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#f7d9a8"/>
+      <stop offset="100%" stop-color="#8e4c55"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1000" rx="48" fill="url(#bg)"/>
+  <circle cx="412" cy="250" r="132" fill="url(#moon)" opacity="0.85"/>
+  <circle cx="462" cy="226" r="116" fill="#0d1221"/>
+  <path d="M0 820L70 790L118 640L164 790L228 724L290 790L340 564L398 790L452 654L510 790L590 702L654 790L720 620L800 820V1000H0Z" fill="#09101d"/>
+  <path d="M226 642L258 344L310 344L332 642ZM454 642L486 308L540 308L562 642Z" fill="#11182a"/>
+  <path d="M366 704L398 240L446 704Z" fill="#121b31"/>
+  <path d="M398 216L430 274H366Z" fill="#f2c77e"/>
+  <g fill="#f2c77e" opacity="0.8">
+    <circle cx="152" cy="170" r="4"/>
+    <circle cx="210" cy="118" r="3"/>
+    <circle cx="672" cy="152" r="3"/>
+    <circle cx="708" cy="214" r="4"/>
+  </g>
+  <path d="M116 220C196 176 262 170 334 184" fill="none" stroke="#bb6780" stroke-opacity="0.46" stroke-width="3" stroke-dasharray="10 12"/>
+  <text x="78" y="884" fill="#f7dcc2" font-size="78" font-family="Georgia, serif" letter-spacing="4">Dark Era</text>
+  <text x="82" y="936" fill="#bbaeca" font-size="28" font-family="sans-serif" letter-spacing="3">Factions, secrets, and night-bound destinies</text>
+</svg>

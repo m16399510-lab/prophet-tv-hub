@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预言家TV文游合集</title>
+    <meta name="description" content="预言家TV文游合集：owlpost、黑暗纪元、宠物店模拟器，以及后续更多企划的统一入口。">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="site-body">
+    <div class="sky-glow" aria-hidden="true"></div>
+    <div class="page-shell">
+        <header class="site-header">
+            <a class="brand-block" href="index.html" aria-label="预言家TV文游合集首页">
+                <span class="brand-kicker">Prophet TV Archive</span>
+                <h1>预言家TV文游合集</h1>
+                <p>命运已写好开头，剩下的由你落笔。</p>
+            </a>
+
+        </header>
+
+        <main>
+            <section class="notice-stage">
+                <div class="notice-copy">
+                    <h2 id="bulletinTitle">正在从水晶球读取最新消息...</h2>
+                    <div class="notice-highlights">
+                        <div class="highlight-card">
+                            <span class="highlight-icon">🎭</span>
+                            <strong>拒绝套皮，全是心血</strong>
+                            <p>每个企划都是从零搓出来的独立机制，拒绝复制粘贴换个世界观糊弄人。</p>
+                        </div>
+                        <div class="highlight-card">
+                            <span class="highlight-icon">⚡</span>
+                            <strong>真正的开袋即食</strong>
+                            <p>填个 API Key 就完事，不整那些让人头秃的复杂前置，拯救手残党。</p>
+                        </div>
+                        <div class="highlight-card">
+                            <span class="highlight-icon">🐴</span>
+                            <strong>（在饿死之前）绝不跑路</strong>
+                            <p>本杰驴一人爆肝敲代码（虽然头发已经不多了），更新嘎嘎勤快，陪你死磕到底。</p>
+                        </div>
+                    </div>
+
+                    <div class="notice-resources">
+                        <p class="resource-title">QQ 群</p>
+                        <div class="qq-group-row">
+                            <span class="qq-group-item">综合售后群：<strong>916210704</strong>（社牛蹦迪 · 福利发放 · 游戏交流）</span>
+                            <span class="qq-group-item">禁言通知群：<strong>335680410</strong>（更新通知）</span>
+                        </div>
+                    </div>
+
+                    <div class="notice-resources">
+                        <p class="resource-title">预言家API站</p>
+                        <div class="resource-links">
+                            <a class="action-pill" href="https://www.yuque.com/yuanyeyuanye-hjydo/grtsig/monbgl5w6avtv918?singleDoc#" target="_blank" rel="noreferrer">📖 API站使用指南</a>
+                            <a class="action-pill" href="https://api.yuyanjia.top/register" target="_blank" rel="noreferrer">📝 账号注册</a>
+                            <a class="action-pill" href="https://api.yuyanjia.top/pricing" target="_blank" rel="noreferrer">💰 API 定价</a>
+                            <a class="action-pill" href="https://shop.yuyanjia.top" target="_blank" rel="noreferrer">🛒 自助充值</a>
+                        </div>
+                        <p class="resource-api-url">Base URL：<code>https://api.yuyanjia.top/v1</code></p>
+                    </div>
+
+                    <div class="notice-resources" style="border-top: 1px dashed rgba(255, 255, 255, 0.1); padding-top: 20px;">
+                        <p class="section-eyebrow" id="bulletinEyebrow">公告说明区</p>
+                        <p style="margin: 8px 0 0; color: var(--muted-deep); font-size: 0.88rem; line-height: 1.8;">
+                            🗺️ <strong>防失联指南：</strong>为了大家能安心跑团产粮，本杰驴把服务器老巢安在了海外，目前靠国内域名牵着线。绝大多数情况下可以直接访问，但如果碰到线路抽风打不开，只需祭出魔法工具（梯子）即可破局。（实在不会施法的，综合售后群里有热心市民帮忙）
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="filter-stage" aria-label="搜索和标签筛选">
+                <div class="filter-strip">
+
+                    <div class="filter-mainline">
+                        <div class="tag-rail" id="tagRail" aria-label="标签筛选"></div>
+
+                        <label class="search-inline search-inline-input" for="searchInput">
+                            <input id="searchInput" type="search" placeholder="搜索作品名、标签、题材">
+                        </label>
+
+                        <label class="search-inline search-inline-status" for="statusFilter">
+                            <select id="statusFilter">
+                                <option value="all">全部状态</option>
+                                <option value="live">开放中</option>
+                                <option value="building">开发中</option>
+                                <option value="planning">筹备中</option>
+                                <option value="maintenance">维护中</option>
+                            </select>
+                        </label>
+
+                        <button class="soft-button filter-clear" id="clearSearchBtn" type="button">清空</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="catalog-stage">
+                <div class="catalog-head">
+                    <div>
+                        <h2>本杰驴的手搓企划，一键直达。</h2>
+                    </div>
+                    <p class="results-meta" id="resultsMeta">正在整理文游档案...</p>
+                </div>
+
+                <div class="games-stack" id="gamesList" aria-live="polite"></div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>预言家TV文游合集 · 本杰驴出品</p>
+            <p>© 2026 Prophet TV. All rights reserved.</p>
+        </footer>
+    </div>
+
+
+    <script defer src="js/config.js"></script>
+    <script defer src="data/owlpost.js"></script>
+    <script defer src="data/dark-era.js"></script>
+    <script defer src="data/pet-shop.js"></script>
+    <script defer src="data/pit-wall.js"></script>
+    <script defer src="js/mock-data.js"></script>
+    <script defer src="js/storage.js"></script>
+    <script defer src="js/main.js"></script>
+</body>
+</html>
