@@ -17,7 +17,7 @@
         linkLabel: '敬请期待',
         linkUrl: '',
         downloads: [],
-        coverUrl: 'assets/covers/pet-shop.svg',
+        coverUrl: 'assets/covers/pet-shop.png',
         sortOrder: 90,
         featured: false,
         visible: true,
