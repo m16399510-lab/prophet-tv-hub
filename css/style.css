@@ -739,9 +739,10 @@ textarea {
 }
 
 .series-hp {
-    color: #e8d5b0;
-    background: linear-gradient(135deg, rgba(142, 96, 42, 0.28), rgba(180, 130, 60, 0.14));
-    border-color: rgba(180, 130, 60, 0.35);
+    color: #fff5d6;
+    background: linear-gradient(135deg, rgba(220, 160, 60, 0.35), rgba(180, 120, 40, 0.15));
+    border-color: rgba(230, 170, 70, 0.45);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
 }
 
 /* HP三部曲卡片左侧金色装饰线 */
@@ -755,23 +756,23 @@ textarea {
 }
 
 .tag-chip-status.status-live {
-    color: #a8dbb5;
-    border-color: rgba(101, 186, 133, 0.3);
+    color: #b8ebd5;
+    border-color: rgba(101, 186, 133, 0.45);
 }
 
 .tag-chip-status.status-building {
-    color: #f0c78a;
-    border-color: rgba(245, 167, 82, 0.3);
+    color: #ffda9e;
+    border-color: rgba(245, 167, 82, 0.45);
 }
 
 .tag-chip-status.status-planning {
-    color: #b0c4f0;
-    border-color: rgba(95, 130, 210, 0.3);
+    color: #c9dbff;
+    border-color: rgba(95, 130, 210, 0.45);
 }
 
 .tag-chip-status.status-maintenance {
-    color: #f0b0b0;
-    border-color: rgba(210, 95, 95, 0.3);
+    color: #ffc4c4;
+    border-color: rgba(210, 95, 95, 0.45);
 }
 
 .tag-chip-status.active {
