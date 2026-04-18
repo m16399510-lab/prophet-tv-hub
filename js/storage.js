@@ -152,7 +152,8 @@
             visible: toBoolean(raw.visible, true),
             updatedAt: toText(raw.updatedAt, today()),
             downloads: Array.isArray(raw.downloads) ? raw.downloads : [],
-            tip: toText(raw.tip, '')
+            tip: toText(raw.tip, ''),
+            series: toText(raw.series, '')
         };
     }
 

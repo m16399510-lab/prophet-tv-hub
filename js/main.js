@@ -81,7 +81,16 @@
 
             var matchesQuery = !query || searchBlob.indexOf(query) > -1;
             var matchesStatus = state.status === 'all' || game.status === state.status;
-            var matchesTag = state.activeTag === '全部' || (game.tags || []).indexOf(state.activeTag) > -1;
+
+            /* 支持状态标签筛选 (__status__live 等) */
+            var matchesTag;
+            if (state.activeTag === '全部') {
+                matchesTag = true;
+            } else if (state.activeTag.indexOf('__status__') === 0) {
+                matchesTag = game.status === state.activeTag.replace('__status__', '');
+            } else {
+                matchesTag = (game.tags || []).indexOf(state.activeTag) > -1;
+            }
 
             return matchesQuery && matchesStatus && matchesTag;
         });
@@ -96,12 +105,26 @@
     function renderTagRail() {
         var tags = getAllTags(getVisibleGames());
 
+        /* 收集实际存在的状态 */
+        var statusSet = {};
+        getVisibleGames().forEach(function (game) {
+            if (game.status && statusMeta[game.status]) {
+                statusSet[game.status] = statusMeta[game.status].label;
+            }
+        });
+
         var chips = ['全部'].concat(tags).map(function (tag) {
             var active = tag === state.activeTag ? ' active' : '';
             return '<button class="tag-chip' + active + '" type="button" data-tag="' + escapeHtml(tag) + '">' + escapeHtml(tag) + '</button>';
         }).join('');
 
-        elements.tagRail.innerHTML = chips || '<span class="admin-muted">暂时还没有标签。</span>';
+        /* 状态标签 */
+        var statusChips = Object.keys(statusSet).map(function (key) {
+            var active = state.activeTag === ('__status__' + key) ? ' active' : '';
+            return '<button class="tag-chip tag-chip-status ' + statusMeta[key].className + active + '" type="button" data-tag="__status__' + key + '">' + statusSet[key] + '</button>';
+        }).join('');
+
+        elements.tagRail.innerHTML = (chips + statusChips) || '<span class="admin-muted">暂时还没有标签。</span>';
 
         Array.prototype.slice.call(elements.tagRail.querySelectorAll('[data-tag]')).forEach(function (button) {
             button.addEventListener('click', function () {
@@ -163,13 +186,24 @@
                 ? '<div class="info-cell"><span>类型</span><strong>' + escapeHtml(game.spotlight) + '</strong></div>'
                 : '';
 
+            /* 系列徽章 */
+            var seriesMeta = {
+                'hp-trilogy': { label: 'HP三部曲', className: 'series-hp' }
+            };
+            var seriesBadge = '';
+            if (game.series && seriesMeta[game.series]) {
+                var sm = seriesMeta[game.series];
+                seriesBadge = '<span class="series-badge ' + sm.className + '">' + sm.label + '</span>';
+            }
+
             return (
-                '<article class="game-panel">' +
+                '<article class="game-panel' + (game.series ? ' game-series-' + escapeHtml(game.series) : '') + '">' +
                 '<div class="game-cover-col">' + coverOuter + '</div>' +
                 '<div class="game-info-col">' +
                 '<div class="game-topline">' +
                 '<span class="status-pill ' + status.className + '">' + status.label + '</span>' +
                 (game.featured ? '<span class="status-pill status-featured">重点企划</span>' : '') +
+                seriesBadge +
                 '</div>' +
                 '<div class="game-title-row">' +
                 '<div>' +

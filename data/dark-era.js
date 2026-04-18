@@ -6,7 +6,7 @@
         subtitle: '当黑魔王赢了，一切才刚刚开始',
         universe: 'HP',
         category: '长文本剧情叙事',
-        tags: ['HP'],
+        tags: ['HP', 'HP三部曲'],
         status: 'live',
         progressLabel: '功能开发完毕 · 进入稳定优化阶段',
         progressValue: 95,
@@ -21,6 +21,7 @@
         sortOrder: 20,
         featured: true,
         visible: true,
+        series: 'hp-trilogy',
         updatedAt: '2026-04-15'
     });
 })();

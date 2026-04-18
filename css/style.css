@@ -727,6 +727,57 @@ textarea {
     background: rgba(239, 199, 119, 0.16);
 }
 
+/* ── 系列徽章 ── */
+.series-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.78rem;
+    font-weight: 700;
+    border-radius: 999px;
+}
+
+.series-hp {
+    color: #e8d5b0;
+    background: linear-gradient(135deg, rgba(142, 96, 42, 0.28), rgba(180, 130, 60, 0.14));
+    border-color: rgba(180, 130, 60, 0.35);
+}
+
+/* HP三部曲卡片左侧金色装饰线 */
+.game-series-hp-trilogy {
+    border-left: 3px solid rgba(200, 155, 70, 0.6);
+}
+
+/* ── 状态标签芯片（标签栏里的"开放中"/"开发中"） ── */
+.tag-chip-status {
+    border-style: dashed;
+}
+
+.tag-chip-status.status-live {
+    color: #a8dbb5;
+    border-color: rgba(101, 186, 133, 0.3);
+}
+
+.tag-chip-status.status-building {
+    color: #f0c78a;
+    border-color: rgba(245, 167, 82, 0.3);
+}
+
+.tag-chip-status.status-planning {
+    color: #b0c4f0;
+    border-color: rgba(95, 130, 210, 0.3);
+}
+
+.tag-chip-status.status-maintenance {
+    color: #f0b0b0;
+    border-color: rgba(210, 95, 95, 0.3);
+}
+
+.tag-chip-status.active {
+    border-style: solid;
+}
+
 .date-pill,
 .mini-chip {
     color: var(--muted);
