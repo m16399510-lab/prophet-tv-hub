@@ -561,6 +561,12 @@ textarea {
     border-radius: 999px;
     font-size: 0.86rem;
     background: rgba(255, 255, 255, 0.04);
+    color: var(--ink);
+}
+
+.search-inline select option {
+    background-color: var(--bg-deep);
+    color: var(--ink);
 }
 
 .search-inline-input {
