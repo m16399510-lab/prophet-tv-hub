@@ -28,7 +28,7 @@
                 password: 'a359'
             }
         ],
-        coverUrl: 'assets/covers/owlpost.jpg',
+        coverUrl: 'assets/covers/owlpost.png',
         sortOrder: 10,
         featured: true,
         visible: true,
