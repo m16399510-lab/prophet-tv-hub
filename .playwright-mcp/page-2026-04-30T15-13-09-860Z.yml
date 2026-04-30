@@ -1,0 +1,226 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - link "预言家TV文游合集首页" [ref=e4] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=e5]: Prophet TV Archive
+      - heading "预言家TV文游合集" [level=1] [ref=e6]
+      - paragraph [ref=e7]: 命运已写好开头，剩下的由你落笔。
+  - main [ref=e8]:
+    - generic [ref=e10]:
+      - heading "欢迎来到本杰驴的魔法世界" [level=2] [ref=e11]
+      - generic [ref=e12]:
+        - generic [ref=e13]:
+          - generic [ref=e14]: 🎭
+          - strong [ref=e15]: 拒绝套皮，全是心血
+          - paragraph [ref=e16]: 每个企划都是从零搓出来的独立机制，拒绝复制粘贴换个世界观糊弄人。
+        - generic [ref=e17]:
+          - generic [ref=e18]: ⚡
+          - strong [ref=e19]: 真正的开袋即食
+          - paragraph [ref=e20]: 填个 API Key 就完事，不整那些让人头秃的复杂前置，拯救手残党。
+        - generic [ref=e21]:
+          - generic [ref=e22]: 🐴
+          - strong [ref=e23]: （在饿死之前）绝不跑路
+          - paragraph [ref=e24]: 本杰驴一人爆肝敲代码（虽然头发已经不多了），更新嘎嘎勤快，陪你死磕到底。
+      - generic [ref=e25]:
+        - paragraph [ref=e26]: 玩家交流群
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - generic [ref=e29]:
+              - generic [ref=e30]:
+                - text: 综合售后群(QQ)：
+                - strong [ref=e31]: "916210704"
+                - text: （社牛蹦迪 · 福利发放 · 游戏交流）
+              - generic [ref=e32]:
+                - text: 禁言通知群(QQ)：
+                - strong [ref=e33]: "335680410"
+                - text: （更新通知）
+            - paragraph [ref=e34]: 没有 QQ 的小伙伴可以扫码进微信群，如二维码过期可在小红书群内联系管理员获取最新码。
+          - img "微信群二维码" [ref=e35]
+      - generic [ref=e36]:
+        - paragraph [ref=e37]: 预言家API站
+        - generic [ref=e38]:
+          - link "📖 API站使用指南" [ref=e39] [cursor=pointer]:
+            - /url: https://www.yuque.com/yuanyeyuanye-hjydo/grtsig/monbgl5w6avtv918?singleDoc#
+          - link "📝 账号注册" [ref=e40] [cursor=pointer]:
+            - /url: https://api.yuyanjia.top/register
+          - link "💰 API 定价" [ref=e41] [cursor=pointer]:
+            - /url: https://api.yuyanjia.top/pricing
+          - link "🛒 自助充值" [ref=e42] [cursor=pointer]:
+            - /url: https://shop.yuyanjia.top
+        - paragraph [ref=e43]:
+          - text: Base URL：
+          - code [ref=e44]: https://api.yuyanjia.top/v1
+      - generic [ref=e45]:
+        - paragraph [ref=e46]: 公告说明区
+        - paragraph [ref=e47]:
+          - text: 🗺️
+          - strong [ref=e48]: 防失联指南：
+          - text: 为了大家能安心跑团产粮，本杰驴把服务器老巢安在了海外，目前靠国内域名牵着线。绝大多数情况下可以直接访问，但如果碰到线路抽风打不开，只需祭出魔法工具（梯子）即可破局。（实在不会施法的，综合售后群里有热心市民帮忙）
+    - region "搜索和标签筛选" [ref=e49]:
+      - generic [ref=e51]:
+        - generic "标签筛选" [ref=e52]:
+          - button "全部" [ref=e53] [cursor=pointer]
+          - button "HP" [ref=e54] [cursor=pointer]
+          - button "HP三部曲" [ref=e55] [cursor=pointer]
+          - button "F1" [ref=e56] [cursor=pointer]
+          - button "模拟经营" [ref=e57] [cursor=pointer]
+          - button "开放中" [ref=e58] [cursor=pointer]
+          - button "开发中" [ref=e59] [cursor=pointer]
+        - searchbox [ref=e61]
+        - combobox [ref=e63]:
+          - option "全部状态" [selected]
+          - option "开放中"
+          - option "开发中"
+          - option "筹备中"
+          - option "维护中"
+        - button "清空" [ref=e64] [cursor=pointer]
+    - generic [ref=e65]:
+      - generic [ref=e66]:
+        - heading "本杰驴的手搓企划，一键直达。" [level=2] [ref=e68]
+        - paragraph [ref=e69]: 当前显示 5 / 5 个作品
+      - generic [ref=e70]:
+        - article [ref=e71]:
+          - link "猫头鹰邮局 OwlPost 封面" [ref=e73] [cursor=pointer]:
+            - /url: https://owlpost.yuyanjia.top
+            - img "猫头鹰邮局 OwlPost 封面" [ref=e74]
+          - generic [ref=e75]:
+            - generic [ref=e76]:
+              - generic [ref=e77]: 开放中
+              - generic [ref=e78]: 重点企划
+            - generic [ref=e80]:
+              - heading "猫头鹰邮局 OwlPost" [level=3] [ref=e81]
+              - paragraph [ref=e82]: 没有代餐的霍格沃茨聊天 App
+            - generic [ref=e84]: HP
+            - paragraph [ref=e85]: 本站第一个也是最久的企划，没有代餐的霍格沃茨聊天 App。把整个霍格沃茨搬进了你的聊天列表——线上聊天、线下约会、视频电话、关系养成、联网学院杯、魁地奇跑团、决斗卡牌对战、养龙种田……非常丰富的小细节，玩法多到可以住进去。
+            - generic [ref=e87]:
+              - generic [ref=e88]: 核心玩法成熟 · 持续维护中
+              - strong [ref=e89]: 85%
+            - generic [ref=e92]:
+              - generic [ref=e93]:
+                - generic [ref=e94]: 收费标准
+                - strong [ref=e95]: 5元/月，定制服务另计
+              - generic [ref=e96]:
+                - generic [ref=e97]: 类型
+                - strong [ref=e98]: 沉浸式聊天应用
+            - link "进入游戏" [ref=e100] [cursor=pointer]:
+              - /url: https://owlpost.yuyanjia.top
+            - generic [ref=e101]:
+              - generic [ref=e102]:
+                - link "📥 安卓 APK" [ref=e103] [cursor=pointer]:
+                  - /url: https://wwbex.lanzoul.com/i5Hby3lmrr7i
+                - generic [ref=e104]:
+                  - text: 密码：
+                  - code [ref=e105]: 2hak
+              - generic [ref=e106]:
+                - link "📥 iOS 封装包" [ref=e107] [cursor=pointer]:
+                  - /url: https://wwbex.lanzoul.com/b01882rcoj
+                - generic [ref=e108]:
+                  - text: 密码：
+                  - code [ref=e109]: a359
+            - paragraph [ref=e110]: 💡 加群找学姐/学长获取邀请码，可以获得更多试用期和金加隆哦~
+        - article [ref=e111]:
+          - link "黑暗纪元 封面" [ref=e113] [cursor=pointer]:
+            - /url: https://darkera.yuyanjia.top/
+            - img "黑暗纪元 封面" [ref=e114]
+          - generic [ref=e115]:
+            - generic [ref=e116]:
+              - generic [ref=e117]: 开放中
+              - generic [ref=e118]: 重点企划
+              - generic [ref=e119]: HP三部曲
+            - generic [ref=e121]:
+              - heading "黑暗纪元" [level=3] [ref=e122]
+              - paragraph [ref=e123]: 当黑魔王赢了，一切才刚刚开始
+            - generic [ref=e124]:
+              - generic [ref=e125]: HP
+              - generic [ref=e126]: HP三部曲
+            - paragraph [ref=e127]: 如果哈利·波特输了呢？这是一个伏地魔建立新秩序的平行世界——高压政权下的地下抵抗、危险的派系博弈、见不得光的秘密同盟。自定义角色档案一手打造你的身份，结构化记忆插件让 AI 记住每一条暗线，庞大的二创世界观撑得起你写到天荒地老。
+            - paragraph [ref=e128]: 专为长文本重度玩家设计，适合那种一口气写三千字还嫌不够的人。
+            - generic [ref=e130]:
+              - generic [ref=e131]: 功能开发完毕 · 进入稳定优化阶段
+              - strong [ref=e132]: 95%
+            - generic [ref=e135]:
+              - generic [ref=e136]:
+                - generic [ref=e137]: 收费标准
+                - strong [ref=e138]: 免费游玩，9.9元解锁自定义 API（未解锁则使用预言家 API 站）
+              - generic [ref=e139]:
+                - generic [ref=e140]: 类型
+                - strong [ref=e141]: 长文本剧情叙事
+            - link "进入游戏" [ref=e143] [cursor=pointer]:
+              - /url: https://darkera.yuyanjia.top/
+        - article [ref=e144]:
+          - link "魔法世界 封面" [ref=e146] [cursor=pointer]:
+            - /url: https://magicworld.yuyanjia.top/
+            - img "魔法世界 封面" [ref=e147]
+          - generic [ref=e148]:
+            - generic [ref=e149]:
+              - generic [ref=e150]: 开放中
+              - generic [ref=e151]: HP三部曲
+            - generic [ref=e153]:
+              - heading "魔法世界" [level=3] [ref=e154]
+              - paragraph [ref=e155]: 自选年代 · 不止学生 · 整个魔法世界都是你的舞台
+            - generic [ref=e156]:
+              - generic [ref=e157]: HP
+              - generic [ref=e158]: HP三部曲
+            - paragraph [ref=e159]: 自定义开局年份，从亲世代到子世代再到孙世代——你可以活在任何一个时间切片里。不再局限于霍格沃茨学生的身份：傲罗、魔法部职员、神奇动物学家、对角巷店主，甚至一个游走在灰色地带的无名之辈。原著向高自由度，整个魔法世界都由你来定义。
+            - paragraph [ref=e160]: 功能开发完毕，已进入稳定优化阶段，可直接进入游戏体验。
+            - generic [ref=e162]:
+              - generic [ref=e163]: 功能开发完毕 · 进入稳定优化阶段
+              - strong [ref=e164]: 95%
+            - generic [ref=e167]:
+              - generic [ref=e168]:
+                - generic [ref=e169]: 收费标准
+                - strong [ref=e170]: 29.9买断，API自备
+              - generic [ref=e171]:
+                - generic [ref=e172]: 类型
+                - strong [ref=e173]: 长文本剧情叙事
+            - link "进入游戏" [ref=e175] [cursor=pointer]:
+              - /url: https://magicworld.yuyanjia.top/
+        - article [ref=e176]:
+          - link "Paddock Club · F1围场 封面" [ref=e178] [cursor=pointer]:
+            - /url: https://humble305.github.io/f1-paddock-club
+            - img "Paddock Club · F1围场 封面" [ref=e179]
+          - generic [ref=e180]:
+            - generic [ref=e182]: 开放中
+            - generic [ref=e184]:
+              - heading "Paddock Club · F1围场" [level=3] [ref=e185]
+              - paragraph [ref=e186]: 沉浸式 F1 车手聊天模拟与关系养成
+            - generic [ref=e188]: F1
+            - paragraph [ref=e189]: 内测组小伙伴苹果条开发的 F1 车手互动游戏——私聊、约会、日记、动态、赛季数据一应俱全。深度人设让每位车手性格分明，F1 赛事数据实时同步，还收录了大量真实历史事件可供回味。高度可定制的用户资料卡，手机电脑双端自适应。
+            - generic [ref=e191]:
+              - generic [ref=e192]: 核心玩法已完整实现，持续迭代中
+              - strong [ref=e193]: 78%
+            - generic [ref=e196]:
+              - generic [ref=e197]:
+                - generic [ref=e198]: 收费标准
+                - strong [ref=e199]: 免费
+              - generic [ref=e200]:
+                - generic [ref=e201]: 类型
+                - strong [ref=e202]: 聊天模拟 · 关系养成
+            - link "进入游戏" [ref=e204] [cursor=pointer]:
+              - /url: https://humble305.github.io/f1-paddock-club
+            - paragraph [ref=e205]: 💡 QQ群：747970480
+        - article [ref=e206]:
+          - img "宠物店模拟器 封面" [ref=e209]
+          - generic [ref=e210]:
+            - generic [ref=e212]: 开发中
+            - generic [ref=e214]:
+              - heading "宠物店模拟器" [level=3] [ref=e215]
+              - paragraph [ref=e216]: 开一间属于自己的魔法宠物店
+            - generic [ref=e218]: 模拟经营
+            - paragraph [ref=e219]: 开罗式经营玩法遇上 AI 文游——装修店铺、进货上架、照料毛球、接待顾客，还能培育繁殖独一无二的新品种。轻文案、慢节奏，适合下班后窝在沙发里慢慢肝的治愈系小游戏。
+            - paragraph [ref=e220]: 目前处于内部测试阶段，敬请期待正式开放，届时欢迎来撸猫。
+            - generic [ref=e222]:
+              - generic [ref=e223]: 开发中 · 仅内部测试，暂未开放
+              - strong [ref=e224]: 45%
+            - generic [ref=e227]:
+              - generic [ref=e228]:
+                - generic [ref=e229]: 收费标准
+                - strong [ref=e230]: 9.9元买断
+              - generic [ref=e231]:
+                - generic [ref=e232]: 类型
+                - strong [ref=e233]: 模拟经营 · 治愈休闲
+            - generic [ref=e234]:
+              - generic: 敬请期待
+  - contentinfo [ref=e235]:
+    - paragraph [ref=e236]: 预言家TV文游合集 · 本杰驴出品
+    - paragraph [ref=e237]: © 2026 Prophet TV. All rights reserved.
