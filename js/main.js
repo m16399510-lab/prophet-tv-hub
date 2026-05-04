@@ -2,6 +2,7 @@
     'use strict';
 
     var storage = window.ProphetTVStorage;
+    var PAGE_SIZE = 5;
     var state = {
         snapshot: {
             bulletin: {},
@@ -9,7 +10,8 @@
         },
         activeTag: '全部',
         query: '',
-        status: 'all'
+        status: 'all',
+        currentPage: 1
     };
 
     var statusMeta = {
@@ -29,7 +31,8 @@
         clearSearchBtn: document.getElementById('clearSearchBtn'),
         tagRail: document.getElementById('tagRail'),
         resultsMeta: document.getElementById('resultsMeta'),
-        gamesList: document.getElementById('gamesList')
+        gamesList: document.getElementById('gamesList'),
+        paginationControls: document.getElementById('paginationControls')
     };
 
     function escapeHtml(text) {
@@ -43,6 +46,63 @@
 
     function hasUsableLink(url) {
         return Boolean(url) && url !== '#';
+    }
+
+    var optimizedCoverSources = {
+        'assets/covers/owlpost.png': {
+            webpSmall: 'assets/covers/optimized/owlpost-360.webp',
+            webpLarge: 'assets/covers/optimized/owlpost-720.webp',
+            small: 'assets/covers/optimized/owlpost-360.jpg',
+            large: 'assets/covers/optimized/owlpost-720.jpg'
+        },
+        'assets/covers/dark-era.png': {
+            webpSmall: 'assets/covers/optimized/dark-era-360.webp',
+            webpLarge: 'assets/covers/optimized/dark-era-720.webp',
+            small: 'assets/covers/optimized/dark-era-360.jpg',
+            large: 'assets/covers/optimized/dark-era-720.jpg'
+        },
+        'assets/covers/magic-world.png': {
+            webpSmall: 'assets/covers/optimized/magic-world-360.webp',
+            webpLarge: 'assets/covers/optimized/magic-world-720.webp',
+            small: 'assets/covers/optimized/magic-world-360.jpg',
+            large: 'assets/covers/optimized/magic-world-720.jpg'
+        },
+        'assets/covers/pet-shop.png': {
+            webpSmall: 'assets/covers/optimized/pet-shop-360.webp',
+            webpLarge: 'assets/covers/optimized/pet-shop-720.webp',
+            small: 'assets/covers/optimized/pet-shop-360.jpg',
+            large: 'assets/covers/optimized/pet-shop-720.jpg'
+        },
+        'assets/covers/paddock-club.jpg': {
+            webpSmall: 'assets/covers/optimized/paddock-club-360.webp',
+            webpLarge: 'assets/covers/optimized/paddock-club-720.webp',
+            small: 'assets/covers/optimized/paddock-club-360.jpg',
+            large: 'assets/covers/optimized/paddock-club-720.jpg'
+        }
+    };
+
+    function renderCoverImage(game, index) {
+        var optimized = optimizedCoverSources[game.coverUrl];
+        var isNearFirstScreen = index < 2;
+        var img = '<img src="' + escapeHtml(game.coverUrl) + '" alt="' + escapeHtml(game.title) + ' 封面"' +
+            ' width="600" height="800"' +
+            ' loading="' + (isNearFirstScreen ? 'eager' : 'lazy') + '"' +
+            ' decoding="async"' +
+            ' fetchpriority="' + (index === 0 ? 'high' : 'auto') + '">';
+
+        if (!optimized) {
+            return img;
+        }
+
+        return '<picture>' +
+            '<source media="(max-width: 700px)" type="image/webp" srcset="' +
+            escapeHtml(optimized.webpSmall) + ' 360w, ' +
+            escapeHtml(optimized.webpLarge) + ' 720w" sizes="calc(100vw - 50px)">' +
+            '<source media="(max-width: 700px)" type="image/jpeg" srcset="' +
+            escapeHtml(optimized.small) + ' 360w, ' +
+            escapeHtml(optimized.large) + ' 720w" sizes="calc(100vw - 50px)">' +
+            img +
+            '</picture>';
     }
 
     function getAllTags(games) {
@@ -96,6 +156,94 @@
         });
     }
 
+    function getTotalPages(totalItems) {
+        return Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
+    }
+
+    function clampPage(page, totalPages) {
+        var number = Number(page);
+        if (!Number.isFinite(number)) {
+            number = 1;
+        }
+        return Math.min(totalPages, Math.max(1, Math.round(number)));
+    }
+
+    function getPaginationPages(totalPages) {
+        var pages = [];
+        var index;
+
+        if (totalPages <= 7) {
+            for (index = 1; index <= totalPages; index += 1) {
+                pages.push(index);
+            }
+            return pages;
+        }
+
+        var start = Math.max(2, state.currentPage - 1);
+        var end = Math.min(totalPages - 1, state.currentPage + 1);
+        pages.push(1);
+
+        if (start > 2) {
+            pages.push('gap-start');
+        }
+
+        for (index = start; index <= end; index += 1) {
+            pages.push(index);
+        }
+
+        if (end < totalPages - 1) {
+            pages.push('gap-end');
+        }
+
+        pages.push(totalPages);
+        return pages;
+    }
+
+    function renderPagination(totalPages, totalItems) {
+        if (!elements.paginationControls) {
+            return;
+        }
+
+        if (totalItems <= PAGE_SIZE) {
+            elements.paginationControls.hidden = true;
+            elements.paginationControls.innerHTML = '';
+            return;
+        }
+
+        elements.paginationControls.hidden = false;
+
+        var pageButtons = getPaginationPages(totalPages).map(function (page) {
+            if (typeof page !== 'number') {
+                return '<span class="pagination-gap" aria-hidden="true">...</span>';
+            }
+
+            var active = page === state.currentPage ? ' active' : '';
+            var current = page === state.currentPage ? ' aria-current="page"' : '';
+            return '<button class="pagination-button pagination-number' + active + '" type="button" data-page="' + page + '"' + current + '>' + page + '</button>';
+        }).join('');
+
+        elements.paginationControls.innerHTML = (
+            '<button class="pagination-button" type="button" data-page="prev"' + (state.currentPage === 1 ? ' disabled' : '') + '>上一页</button>' +
+            '<div class="pagination-pages">' + pageButtons + '</div>' +
+            '<button class="pagination-button" type="button" data-page="next"' + (state.currentPage === totalPages ? ' disabled' : '') + '>下一页</button>'
+        );
+
+        Array.prototype.slice.call(elements.paginationControls.querySelectorAll('[data-page]')).forEach(function (button) {
+            button.addEventListener('click', function () {
+                var target = button.getAttribute('data-page');
+                var nextPage = target === 'prev'
+                    ? state.currentPage - 1
+                    : target === 'next'
+                        ? state.currentPage + 1
+                        : Number(target);
+
+                state.currentPage = clampPage(nextPage, totalPages);
+                renderGames();
+                elements.gamesList.scrollIntoView({ block: 'start' });
+            });
+        });
+    }
+
     function renderBulletin() {
         var bulletin = state.snapshot.bulletin || {};
         elements.bulletinEyebrow.textContent = bulletin.eyebrow || '公告说明区';
@@ -129,6 +277,7 @@
         Array.prototype.slice.call(elements.tagRail.querySelectorAll('[data-tag]')).forEach(function (button) {
             button.addEventListener('click', function () {
                 state.activeTag = button.getAttribute('data-tag') || '全部';
+                state.currentPage = 1;
                 renderAll();
             });
         });
@@ -137,8 +286,14 @@
     function renderGames() {
         var visibleGames = getVisibleGames();
         var filteredGames = getFilteredGames();
+        var totalPages = getTotalPages(filteredGames.length);
+        state.currentPage = clampPage(state.currentPage, totalPages);
+        var startIndex = (state.currentPage - 1) * PAGE_SIZE;
+        var pagedGames = filteredGames.slice(startIndex, startIndex + PAGE_SIZE);
 
-        elements.resultsMeta.textContent = '当前显示 ' + filteredGames.length + ' / ' + visibleGames.length + ' 个作品';
+        elements.resultsMeta.textContent = filteredGames.length
+            ? '当前显示 ' + (startIndex + 1) + '-' + (startIndex + pagedGames.length) + ' / ' + filteredGames.length + ' 个作品'
+            : '当前显示 0 / ' + visibleGames.length + ' 个作品';
 
         if (!filteredGames.length) {
             elements.gamesList.innerHTML = (
@@ -148,16 +303,17 @@
                 '<p>可以试着清空关键词，或者换个更宽一点的标签继续找。</p>' +
                 '</article>'
             );
+            renderPagination(totalPages, filteredGames.length);
             return;
         }
 
-        elements.gamesList.innerHTML = filteredGames.map(function (game) {
+        elements.gamesList.innerHTML = pagedGames.map(function (game, index) {
             var status = statusMeta[game.status] || statusMeta.planning;
             var tagHtml = (game.tags || []).filter(Boolean).map(function (tag) {
                 return '<span class="mini-chip">' + escapeHtml(tag) + '</span>';
             }).join('');
 
-            var coverInner = '<img src="' + escapeHtml(game.coverUrl) + '" alt="' + escapeHtml(game.title) + ' 封面">';
+            var coverInner = renderCoverImage(game, index);
             var coverOuter = hasUsableLink(game.linkUrl)
                 ? '<a class="cover-shell" href="' + escapeHtml(game.linkUrl) + '" target="_blank" rel="noreferrer">' + coverInner + '</a>'
                 : '<div class="cover-shell cover-shell-static">' + coverInner + '</div>';
@@ -232,6 +388,7 @@
                 '</article>'
             );
         }).join('');
+        renderPagination(totalPages, filteredGames.length);
     }
 
     function renderAll() {
@@ -243,11 +400,13 @@
     function bindEvents() {
         elements.searchInput.addEventListener('input', function () {
             state.query = elements.searchInput.value.trim();
+            state.currentPage = 1;
             renderGames();
         });
 
         elements.statusFilter.addEventListener('change', function () {
             state.status = elements.statusFilter.value;
+            state.currentPage = 1;
             renderGames();
         });
 
@@ -255,6 +414,7 @@
             state.query = '';
             state.status = 'all';
             state.activeTag = '全部';
+            state.currentPage = 1;
             elements.searchInput.value = '';
             elements.statusFilter.value = 'all';
             renderAll();
