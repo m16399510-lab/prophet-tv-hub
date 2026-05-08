@@ -16,6 +16,7 @@
 
     var statusMeta = {
         live: { label: '开放中', className: 'status-live' },
+        testing: { label: '内测中', className: 'status-testing' },
         building: { label: '开发中', className: 'status-building' },
         planning: { label: '筹备中', className: 'status-planning' },
         maintenance: { label: '维护中', className: 'status-maintenance' }
@@ -66,6 +67,12 @@
             webpLarge: 'assets/covers/optimized/magic-world-720.webp',
             small: 'assets/covers/optimized/magic-world-360.jpg',
             large: 'assets/covers/optimized/magic-world-720.jpg'
+        },
+        'assets/covers/qzgo.jpg': {
+            webpSmall: 'assets/covers/optimized/qzgo-360.webp',
+            webpLarge: 'assets/covers/optimized/qzgo-720.webp',
+            small: 'assets/covers/optimized/qzgo-360.jpg',
+            large: 'assets/covers/optimized/qzgo-720.jpg'
         },
         'assets/covers/pet-shop.png': {
             webpSmall: 'assets/covers/optimized/pet-shop-360.webp',
@@ -353,7 +360,7 @@
             }
 
             return (
-                '<article class="game-panel' + (game.series ? ' game-series-' + escapeHtml(game.series) : '') + '">' +
+                '<article class="game-panel' + (game.series ? ' game-series-' + escapeHtml(game.series) : '') + '" data-game-id="' + escapeHtml(game.id) + '">' +
                 '<div class="game-cover-col">' + coverOuter + '</div>' +
                 '<div class="game-info-col">' +
                 '<div class="game-topline">' +

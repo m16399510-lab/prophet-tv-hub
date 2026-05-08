@@ -788,6 +788,11 @@ textarea {
     background: rgba(245, 167, 82, 0.18);
 }
 
+.status-testing {
+    color: #dff8ff;
+    background: rgba(70, 185, 210, 0.18);
+}
+
 .status-planning {
     color: #d7e4ff;
     background: rgba(95, 130, 210, 0.18);
@@ -839,6 +844,11 @@ textarea {
 .tag-chip-status.status-building {
     color: #ffda9e;
     border-color: rgba(245, 167, 82, 0.45);
+}
+
+.tag-chip-status.status-testing {
+    color: #aeefff;
+    border-color: rgba(70, 185, 210, 0.45);
 }
 
 .tag-chip-status.status-planning {
@@ -895,6 +905,11 @@ textarea {
     font-size: 0.94rem;
 }
 
+.game-panel[data-game-id="qzgo"] .game-description {
+    color: var(--ink);
+    font-size: 0.98rem;
+}
+
 .progress-row {
     margin-top: 4px;
 }
@@ -906,6 +921,24 @@ textarea {
     color: var(--muted);
     margin-bottom: 8px;
     font-size: 0.86rem;
+}
+
+.game-panel[data-game-id="qzgo"] .progress-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 4px 12px;
+    line-height: 1.65;
+}
+
+.game-panel[data-game-id="qzgo"] .progress-head span {
+    grid-column: 1 / -1;
+}
+
+.game-panel[data-game-id="qzgo"] .progress-head strong {
+    grid-column: 2;
+    justify-self: end;
+    color: var(--ink);
+    white-space: nowrap;
 }
 
 .progress-track {

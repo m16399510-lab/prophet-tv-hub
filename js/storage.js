@@ -67,7 +67,7 @@
 
     function normalizeStatus(value) {
         var text = toText(value, 'planning').toLowerCase();
-        if (['live', 'building', 'planning', 'maintenance'].indexOf(text) > -1) {
+        if (['live', 'testing', 'building', 'planning', 'maintenance'].indexOf(text) > -1) {
             return text;
         }
         return 'planning';
