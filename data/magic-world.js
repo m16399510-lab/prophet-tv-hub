@@ -19,7 +19,7 @@
         downloads: [],
         coverUrl: 'assets/covers/magic-world.png',
         sortOrder: 25,
-        featured: false,
+        featured: true,
         visible: true,
         series: 'hp-trilogy',
         updatedAt: '2026-04-30'
