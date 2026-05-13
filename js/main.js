@@ -74,6 +74,12 @@
             small: 'assets/covers/optimized/qzgo-360.jpg',
             large: 'assets/covers/optimized/qzgo-720.jpg'
         },
+        'assets/covers/dark-fairytale-island.jpg': {
+            webpSmall: 'assets/covers/optimized/dark-fairytale-island-360.webp',
+            webpLarge: 'assets/covers/optimized/dark-fairytale-island-720.webp',
+            small: 'assets/covers/optimized/dark-fairytale-island-360.jpg',
+            large: 'assets/covers/optimized/dark-fairytale-island-720.jpg'
+        },
         'assets/covers/pet-shop.png': {
             webpSmall: 'assets/covers/optimized/pet-shop-360.webp',
             webpLarge: 'assets/covers/optimized/pet-shop-720.webp',
