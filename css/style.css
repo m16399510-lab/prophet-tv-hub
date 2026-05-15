@@ -848,6 +848,10 @@ textarea {
     border-style: dashed;
 }
 
+.tag-chip-series {
+    font-weight: 700;
+}
+
 .tag-chip-status.status-live {
     color: #b8ebd5;
     border-color: rgba(101, 186, 133, 0.45);

@@ -22,6 +22,11 @@
         maintenance: { label: '维护中', className: 'status-maintenance' }
     };
 
+    var seriesMeta = {
+        'hp-trilogy': { label: 'HP三部曲', className: 'series-hp' },
+        'mist-archive': { label: '迷雾档案', className: 'series-mist' }
+    };
+
     var elements = {
 
         bulletinEyebrow: document.getElementById('bulletinEyebrow'),
@@ -155,6 +160,7 @@
                 game.description,
                 game.pricing,
                 game.spotlight,
+                game.series && seriesMeta[game.series] ? seriesMeta[game.series].label : '',
                 (game.tags || []).join(' ')
             ].join(' ').toLowerCase();
 
@@ -167,6 +173,8 @@
                 matchesTag = true;
             } else if (state.activeTag.indexOf('__status__') === 0) {
                 matchesTag = game.status === state.activeTag.replace('__status__', '');
+            } else if (state.activeTag.indexOf('__series__') === 0) {
+                matchesTag = game.series === state.activeTag.replace('__series__', '');
             } else {
                 matchesTag = (game.tags || []).indexOf(state.activeTag) > -1;
             }
@@ -270,19 +278,43 @@
     }
 
     function renderTagRail() {
-        var tags = getAllTags(getVisibleGames());
+        var visibleGames = getVisibleGames();
+        var tags = getAllTags(visibleGames);
 
         /* 收集实际存在的状态 */
         var statusSet = {};
-        getVisibleGames().forEach(function (game) {
+        var seriesSet = {};
+        visibleGames.forEach(function (game) {
             if (game.status && statusMeta[game.status]) {
                 statusSet[game.status] = statusMeta[game.status].label;
+            }
+
+            if (game.series && seriesMeta[game.series]) {
+                var seriesLabel = seriesMeta[game.series].label;
+                if (tags.indexOf(seriesLabel) === -1) {
+                    seriesSet[game.series] = seriesMeta[game.series];
+                }
             }
         });
 
         var chips = ['全部'].concat(tags).map(function (tag) {
             var active = tag === state.activeTag ? ' active' : '';
-            return '<button class="tag-chip' + active + '" type="button" data-tag="' + escapeHtml(tag) + '">' + escapeHtml(tag) + '</button>';
+            var seriesClass = '';
+            Object.keys(seriesMeta).some(function (key) {
+                if (seriesMeta[key].label === tag) {
+                    seriesClass = ' tag-chip-series ' + seriesMeta[key].className;
+                    return true;
+                }
+                return false;
+            });
+            return '<button class="tag-chip' + seriesClass + active + '" type="button" data-tag="' + escapeHtml(tag) + '">' + escapeHtml(tag) + '</button>';
+        }).join('');
+
+        /* 系列标签 */
+        var seriesChips = Object.keys(seriesSet).map(function (key) {
+            var active = state.activeTag === ('__series__' + key) ? ' active' : '';
+            var meta = seriesSet[key];
+            return '<button class="tag-chip tag-chip-series ' + meta.className + active + '" type="button" data-tag="__series__' + key + '">' + meta.label + '</button>';
         }).join('');
 
         /* 状态标签 */
@@ -291,7 +323,7 @@
             return '<button class="tag-chip tag-chip-status ' + statusMeta[key].className + active + '" type="button" data-tag="__status__' + key + '">' + statusSet[key] + '</button>';
         }).join('');
 
-        elements.tagRail.innerHTML = (chips + statusChips) || '<span class="admin-muted">暂时还没有标签。</span>';
+        elements.tagRail.innerHTML = (chips + seriesChips + statusChips) || '<span class="admin-muted">暂时还没有标签。</span>';
 
         Array.prototype.slice.call(elements.tagRail.querySelectorAll('[data-tag]')).forEach(function (button) {
             button.addEventListener('click', function () {
@@ -362,10 +394,6 @@
                 : '';
 
             /* 系列徽章 */
-            var seriesMeta = {
-                'hp-trilogy': { label: 'HP三部曲', className: 'series-hp' },
-                'mist-archive': { label: '迷雾档案', className: 'series-mist' }
-            };
             var seriesBadge = '';
             if (game.series && seriesMeta[game.series]) {
                 var sm = seriesMeta[game.series];
