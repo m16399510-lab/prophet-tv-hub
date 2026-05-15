@@ -363,7 +363,8 @@
 
             /* 系列徽章 */
             var seriesMeta = {
-                'hp-trilogy': { label: 'HP三部曲', className: 'series-hp' }
+                'hp-trilogy': { label: 'HP三部曲', className: 'series-hp' },
+                'mist-archive': { label: '迷雾档案', className: 'series-mist' }
             };
             var seriesBadge = '';
             if (game.series && seriesMeta[game.series]) {

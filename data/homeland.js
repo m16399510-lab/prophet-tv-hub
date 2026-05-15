@@ -6,7 +6,7 @@
         subtitle: '为失去故乡的人与非人类生命，写下一份归家方案',
         universe: '原创',
         category: '悬疑解谜·纪实人文',
-        tags: ['悬疑解谜', '纪实人文'],
+        tags: ['悬疑解谜'],
         status: 'live',
         progressLabel: '开放中 · 后续以文风修订与问题修复为主',
         progressValue: 95,
@@ -18,9 +18,10 @@
         linkUrl: 'https://homeland.yuyanjia.top',
         downloads: [],
         coverUrl: 'assets/covers/homeland.jpg',
-        sortOrder: 38,
+        sortOrder: 37,
         featured: false,
         visible: true,
+        series: 'mist-archive',
         updatedAt: '2026-05-14'
     });
 })();

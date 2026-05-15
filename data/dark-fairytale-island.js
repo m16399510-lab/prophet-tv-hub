@@ -8,7 +8,7 @@
         category: '悬疑解谜·黑暗童话',
         tags: ['悬疑解谜'],
         status: 'testing',
-        progressLabel: '主线章节、同伴归页、状态规则和开放终章已接近完成，目前正在内测打磨剧情节奏与长章体验。',
+        progressLabel: '测试中 · 后续以文风修订与问题修复为主',
         progressValue: 95,
         pricing: '9.9元买断，API自备',
         summary: '童话书合上的那一刻，岛上的灯全灭了。你不是来旁观故事的读者，而是被旧书点名留下的人：每一章都有一条会吃人的规则，每一位同伴都藏着被改写过的旧事。',
@@ -18,9 +18,10 @@
         linkUrl: '#',
         downloads: [],
         coverUrl: 'assets/covers/dark-fairytale-island.jpg',
-        sortOrder: 37,
+        sortOrder: 39.5,
         featured: false,
         visible: true,
+        series: 'mist-archive',
         updatedAt: '2026-05-13'
     });
 })();
