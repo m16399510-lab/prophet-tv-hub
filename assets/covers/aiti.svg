@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800" role="img" aria-labelledby="title desc">
+  <title id="title">AITI 海报</title>
+  <desc id="desc">一套严肃到离谱的赛博人格测试</desc>
+  <defs>
+    <linearGradient id="mint" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8effdf"/>
+      <stop offset="1" stop-color="#55e7c4"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="76%" cy="14%" r="76%">
+      <stop offset="0" stop-color="#75ffd7" stop-opacity="0.34"/>
+      <stop offset="0.46" stop-color="#75ffd7" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#75ffd7" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" fill="none" stroke="#75ffd7" stroke-opacity="0.12" stroke-width="1"/>
+    </pattern>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#000000" flood-opacity="0.44"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="800" fill="#050706"/>
+  <rect width="600" height="800" fill="url(#grid)"/>
+  <rect width="600" height="800" fill="url(#glow)"/>
+  <path d="M0 642C122 610 186 668 296 636C396 607 455 526 600 548V800H0Z" fill="#0a1714" opacity="0.74"/>
+
+  <g transform="translate(48 56)" filter="url(#softShadow)">
+    <rect x="0" y="0" width="72" height="72" rx="10" fill="url(#mint)"/>
+    <text x="36" y="47" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="900" fill="#06100d">AI</text>
+    <text x="92" y="31" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="26" font-weight="900" fill="#e9fff6">AITI</text>
+    <text x="92" y="56" font-family="Consolas, monospace" font-size="13" font-weight="700" fill="#e9fff6" opacity="0.48">AI TYPE INDICATOR</text>
+  </g>
+
+  <g transform="translate(48 188)">
+    <text x="0" y="0" font-family="Consolas, monospace" font-size="13" font-weight="700" fill="#f6cf69">SILICON PERSONALITY TEST</text>
+    <text x="0" y="112" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="118" font-weight="950" fill="#e9fff6" letter-spacing="0">AITI</text>
+    <text x="0" y="174" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="34" font-weight="900" fill="#e9fff6">一套严肃到离谱的</text>
+    <text x="0" y="222" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="48" font-weight="950" fill="#e9fff6">赛博人格测试</text>
+    <rect x="0" y="250" width="288" height="8" rx="4" fill="#75ffd7"/>
+    <rect x="298" y="250" width="128" height="8" rx="4" fill="#f6cf69"/>
+  </g>
+
+  <g transform="translate(48 514)">
+    <rect x="0" y="0" width="504" height="138" rx="8" fill="#08110f" fill-opacity="0.82" stroke="#75ffd7" stroke-opacity="0.26"/>
+    <text x="28" y="43" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" font-weight="900" fill="#75ffd7">30 题诊断你更像哪款 AI 大模型</text>
+    <text x="28" y="82" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="17" font-weight="700" fill="#c7e7dc">情绪价值、幻觉浓度、上下文记忆、打工流程感</text>
+    <text x="28" y="112" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="17" font-weight="700" fill="#c7e7dc">一起生成一份看起来很专业的赛博胡说报告。</text>
+  </g>
+
+  <g transform="translate(48 700)">
+    <rect x="0" y="0" width="208" height="46" rx="8" fill="#75ffd7"/>
+    <text x="104" y="30" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" font-weight="900" fill="#06100d">开始测试</text>
+    <text x="232" y="30" font-family="Consolas, monospace" font-size="14" font-weight="700" fill="#e9fff6" opacity="0.5">aiti.yuyanjia.top</text>
+  </g>
+</svg>
